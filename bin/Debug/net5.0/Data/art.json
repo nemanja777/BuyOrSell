@@ -1,0 +1,27 @@
+﻿[
+  {
+    "Id": 0,
+    "Name": "OGLAS1",
+    "Description": "NOVO NOVO NOVO",
+    "Url": "https://www.ikea.com/rs/sr/p/stefan-stolica-smede-crna-00211088/",
+    "Price": 99.99,
+    "Cattegory": "Namestaj",
+    "ApplicationUser": 1,
+    "Town": "Novi Sad",
+    "Date": "1853-03-30T00:00:00"
+
+  },
+
+  {
+    "Id": 0,
+    "Name": "OGLAS2",
+    "Description": "POLOVNO",
+    "Url": "https://www.ikea.com/rs/sr/p/stefan-stolica-smede-crna-00211088/",
+    "Price": 145.99,
+    "Cattegory": "Namestaj",
+    "ApplicationUser": 1,
+    "Town": "Beograd",
+    "Date": "1953-03-30T00:00:00"
+
+  }
+]
