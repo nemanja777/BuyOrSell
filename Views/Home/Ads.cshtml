@@ -1,0 +1,98 @@
+﻿@model IEnumerable<AdViewModel>
+@*@model PagedList.IPagedList<AdViewModel>*@
+@*@model PaginatedList<BuyOrSell.Data.AdViewModel>*@
+@using BuyOrSell.Data
+@using PagedList.Mvc;
+
+
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+
+
+<form asp-controller="Home" asp-action="Ads">
+    <div class="input-group">
+        <input type="search" name="searchString" method="get" class="form-control rounded" placeholder="Search ads..." aria-label="Search" aria-describedby="search-addon" />
+        <button type="submit" value="Filter" class="btn btn-outline-primary">search</button>
+    </div>
+</form>
+
+
+<br />
+
+
+
+<a asp-controller="Home" asp-action="Create" class="btn btn-success">
+    <i class="fa-solid fa-plus"></i>&nbsp; Create new ad
+</a>
+<br />
+<br />
+
+
+
+
+
+
+<div>
+    <table class="table table-dark table-hover table-md">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Picture</th>
+                <th scope="col">Price</th>
+                <th scope="col">Category</th>
+                <th scope="col">User</th>
+                <th scope="col">Town</th>
+                <th scope="col">Date</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+
+
+            @foreach (var a in Model)
+            {
+
+                <tr>
+                    <th scope="row"></th>
+                    <td>@a.Name</td>
+                    <td>@a.Description</td>
+                    <td><img src="@a.Url" width="300" height="200"></td>
+                    <td>@a.Price</td>
+                    <td>@a.Cattegory</td>
+                    <td>@a.ApplicationUser.FirstName</td>
+                    <td>@a.Town</td>
+                    <td>@a.Date</td>
+                    <td class="text-center">
+                        <div class="w-30 btn-group" role="group">
+                            <a asp-controller="Home" asp-route-Id="@a.Id" asp-action="Edit" class="btn btn-primary mx-2">
+                                <i class="fas fa-edit"></i>
+
+                            </a>
+                            <a asp-controller="Home" asp-route-Id="@a.Id" asp-action="DeletePost" class="btn btn-danger mx-2">
+                                <i class="far fa-trash-alt"></i>
+
+                            </a>
+                        </div>
+                    </td>
+
+
+                </tr>
+
+
+            }
+
+
+        </tbody>
+    </table>
+
+</div>
+
+
+
+
+
